@@ -1,5 +1,5 @@
-package Werwolf;
-import Werwolf.*;
+package src;
+import src.*;
 
 public class Human extends Player {
 	

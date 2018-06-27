@@ -1,5 +1,5 @@
-package Werwolf;
-import Werwolf.*;
+package src;
+import src.*;
 import java.util.Scanner;
 
 public class Seer extends Player {
@@ -18,7 +18,7 @@ public class Seer extends Player {
 	
 	public void action () {
 		
-		System.out.println("The Seer awakens... ");
+		//System.out.println("The Seer awakens... ");
 		
 	}
 }

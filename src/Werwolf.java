@@ -1,5 +1,5 @@
-package Werwolf;
-import Werwolf.*;
+package src;
+import src.*;
 import java.util.Scanner;
 
 public class Werwolf extends Player {

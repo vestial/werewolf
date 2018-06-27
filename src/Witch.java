@@ -1,5 +1,5 @@
-package Werwolf;
-import Werwolf.*;
+package src;
+import src.*;
 import java.util.Scanner;
 
 public class Witch extends Player {
@@ -23,12 +23,15 @@ public class Witch extends Player {
 	
 	public void action () {
 		
-		System.out.println("The Witch awakens... ");
+		//System.out.println("The Witch awakens... ");
 		if(this.healPotion) {
 			
 		}
 		
 		if(this.poisonPotion) {
+			Scanner input = new Scanner(System.in);
+			String s;
+			//System.out.println("does the Witch want to kill someone?");
 			
 		}
 	}
