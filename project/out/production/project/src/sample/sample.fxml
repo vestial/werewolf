@@ -47,7 +47,7 @@
             </MenuBar>
             <ImageView fx:id="playerImage" fitHeight="81.0" fitWidth="64.0" layoutX="347.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@sprites/seer_male.png" />
+                  <Image url="@sprites/man.png" />
                </image>
             </ImageView>
             <Label fx:id="playerNameLabel" layoutX="416.0" layoutY="48.0" prefHeight="26.0" prefWidth="142.0" text="Name: Penske">
@@ -55,7 +55,7 @@
                   <Font name="Ubuntu Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="roleLabel" layoutX="416.0" layoutY="76.0" prefHeight="26.0" prefWidth="142.0" text="Role: Seer">
+            <Label fx:id="roleLabel" layoutX="416.0" layoutY="76.0" prefHeight="26.0" prefWidth="142.0" text="Role: Unknown">
                <font>
                   <Font name="Ubuntu Bold" size="18.0" />
                </font>

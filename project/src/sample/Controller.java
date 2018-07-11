@@ -340,6 +340,7 @@ public class Controller implements Initializable {
                 }
             }
             System.out.println("Active Player: " + players.get(position).getFirstName());
+            playerNameLabel.setText("Name: " + players.get(position).getFirstName());
             handleSeer();
             seerEnabler();
             System.out.println("\nTell the Crystal Ball your target!");
@@ -353,13 +354,18 @@ public class Controller implements Initializable {
         for(int i = 0; i < players.size(); i++) {
             players.get(i).setVoteAgainst(0);
         }
+        for(int i = 0; i < players.size(); i++) {
+            if(players.get(i).getRole().equals("Werwolf") && players.get(i).getStatus().equals("Alive")) {
+                playerNameLabel.setText("Name: " + players.get(i).getFirstName());
+                break;
+            }
+        }
         timeImage.setImage(night);
         phase = 2;
         phaseLabel.setText("Night");
         handleWerewolf();
         werewolfEnabler();
         System.out.println("\nThe werewolves are on the hunt...");
-        System.out.println(chatName + " hunts: ");
     }
 
     @FXML
@@ -377,6 +383,7 @@ public class Controller implements Initializable {
                     position = i;
                 }
             }
+            playerNameLabel.setText("Name: " + players.get(position).getFirstName());
             System.out.println("Active Player: " + players.get(position).getFirstName());
             if (witchHealFlag && witchKillFlag) {
                 System.out.println("\nA new day has dawned...");
@@ -474,6 +481,8 @@ public class Controller implements Initializable {
             if (!players.get(i).getHasVoted() && players.get(i).getStatus().equals("Alive") && players.get(i).getRole().equals("Werwolf")) {
                 switchPlayer(players.get(i));
                 System.out.println("Active Player: " + players.get(i).getFirstName());
+                playerNameLabel.setText("Name: " + players.get(i).getFirstName());
+
                 break;
             }
         }
