@@ -1,0 +1,12 @@
+.root {
+    -fx-background-image: url("https://res.cloudinary.com/jerrick/image/upload/f_auto,fl_progressive,q_auto,c_fill,h_400,w_600/e0pbnotaauoyomymul1r");
+}
+
+@font-face {
+    font-family: 'Werewolf',
+    src: url('startingScreen/font.ttf');
+}
+
+#werewolfTitle {
+    -fx-font-family: 'Werewolf'
+}
