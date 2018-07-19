@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.URL;
@@ -313,8 +314,7 @@ public class Controller implements Initializable {
             if(this.alive.equals("Alive")){
                 buttonEnabler();
             }else this.setDisable();
-
-            String content = outputText.getText() + "\n" + "The night has fallen!\n"+"Let the hunt begin!\n";
+            String content = "The night has fallen!\n"+"Let the hunt begin!\n";
             outputText.appendText(content);
             timeImage.setImage(night);
             phaseLabel.setText("Night");
@@ -324,8 +324,7 @@ public class Controller implements Initializable {
             if(this.alive.equals("Alive")){
                 buttonEnabler();
             }else this.setDisable();
-
-            String content = outputText.getText() + "\n" + "A new day has dawned!\n"+"Start Voting!\n";
+            String content = "A new day has dawned!\n"+"Start Voting!\n";
             outputText.appendText(content);
             timeImage.setImage(noon);
             phaseLabel.setText("Daytime");
@@ -604,12 +603,28 @@ public class Controller implements Initializable {
             checkButton.setDisable(true);
             huntButton.setDisable(true);
             skipButton.setDisable(true);
+            this.alive ="Dead";
+            //appendChat("You're dead!\n");
         });
     }
 
+    /**
+     * Show a contruction dialog to user
+     */
     public void showInstruction(){
         String content = "Choose the player from the table then using button to take the action.\n" + "Have fun!";
         Alert alert = new Alert(Alert.AlertType.INFORMATION, content, ButtonType.OK);
         alert.showAndWait();
+    }
+
+    /**
+     * Close server socket on exit to free port
+     */
+    public void shutdown(){
+        try {
+            server.getServerSocket().close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

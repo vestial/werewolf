@@ -69,11 +69,20 @@ public class Server implements Runnable {
     }
 
     /**
+     * Get this server socket
+     * @return this server socket
+     */
+    public ServerSocket getServerSocket() {
+        return server;
+    }
+
+    /**
      * Run this server as Thread at the given port
      */
     public void run() {
        try{
         server = new ServerSocket(port);
+        server.setReuseAddress(true); // allow server to bind in TIME_WAIT
         waitForClient();
 
         } catch(IOException ioe){
@@ -207,7 +216,7 @@ public class Server implements Runnable {
             while (true) {
 
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -253,7 +262,10 @@ public class Server implements Runnable {
             sendToAllClients(s, clients);
 
             for (int i = 0; i < game.tablePlayers.length; i++) {
-                if (game.tablePlayers[i].getStatus().equals("Dead")) sendDisable(clients.get(i));
+                if (game.tablePlayers[i].getStatus().equals("Dead")){
+                    sendDisable(clients.get(i));
+                    sendChat("You're dead!\n", clients.get(i));
+                }
             }
 
             int count = 0;
@@ -264,7 +276,7 @@ public class Server implements Runnable {
             }
             while (true) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -289,8 +301,23 @@ public class Server implements Runnable {
         }
     }
 
+    /**
+     * Send disable command to client.That happends when the player is dead
+     * @param client : client that will be sent
+     */
     public void sendDisable(ThreadHandler client){
         client.getWriter().println("Disable");
+        client.getWriter().flush();
+    }
+
+
+    /**
+     * Send Text to one client
+     * @param mess : message to be sent
+     * @param client : client to be sent
+     */
+    public void sendChat(String mess, ThreadHandler client){
+        client.getWriter().println(mess);
         client.getWriter().flush();
     }
 }

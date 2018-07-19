@@ -251,6 +251,13 @@ public class Town {
 
 		int max = 0;
 		int index = 0;
+		// no kill if all player has o vote
+		for(int i = 0; i < tablePlayers.length; i++) {
+			if(tablePlayers[i].getVoteAgainst() != 0) {
+				killTarget=true;
+				break;
+			}else killTarget = false;
+		}
 		//max
 		for(int i = 0; i < tablePlayers.length; i++) {
 			if(tablePlayers[i].getVoteAgainst() > max) {

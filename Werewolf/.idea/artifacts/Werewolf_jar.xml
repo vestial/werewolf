@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Werewolf:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Werewolf_jar</output-path>
+    <root id="archive" name="Werewolf.jar">
+      <element id="module-output" name="Werewolf" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/gson-2.6.2.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/gson-2.6.2.jar" />
+    </root>
+  </artifact>
+</component>

@@ -1,4 +1,4 @@
-package sample;
+package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,11 +22,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("startingScreen/startingScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/startingScreen/startingScreen.fxml"));
         primaryStage.setTitle("Werewolf");
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setResizable(false);
-        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+        scene.getStylesheets().addAll(this.getClass().getResource("/sample/style.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
 

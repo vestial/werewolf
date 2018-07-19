@@ -1,6 +1,8 @@
 package sample.startingScreen;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import sample.Controller;
 
 import java.io.IOException;
@@ -43,10 +46,10 @@ public class startingScreenController implements Initializable  {
 
     @FXML
     protected void handleHostButtonAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/sample.fxml"));
         Parent root = loader.load();
         Scene gameScene = new Scene(root);
-        gameScene.getStylesheets().addAll(this.getClass().getResource("../background.css").toExternalForm());
+        gameScene.getStylesheets().addAll(this.getClass().getResource("/sample/background.css").toExternalForm());
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setResizable(false);
         Controller controller = loader.getController();
@@ -60,6 +63,13 @@ public class startingScreenController implements Initializable  {
 
         controller.hostGame(port,IP);
 
+        window.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+               controller.shutdown();
+               System.exit(0);
+               Platform.exit();
+            }
+        });
 
     }
     /**
@@ -87,10 +97,10 @@ public class startingScreenController implements Initializable  {
 
     @FXML
     protected void handleJoinButtonAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/sample.fxml"));
         Parent root = loader.load();
         Scene gameScene = new Scene(root);
-        gameScene.getStylesheets().addAll(this.getClass().getResource("../background.css").toExternalForm());
+        gameScene.getStylesheets().addAll(this.getClass().getResource("/sample/background.css").toExternalForm());
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setResizable(false);
 
