@@ -125,4 +125,8 @@ Um Verwirrung im Spiel zu vermeiden, könnte man noch eine Überprüfung der im 
 
 Bild für den Login-Screen:  
 https://www.panic-mode.de/wp-content/uploads/2015/03/Werewolf_HD.jpg  
-![](https://www.panic-mode.de/wp-content/uploads/2015/03/Werewolf_HD.jpg)
+![](https://www.panic-mode.de/wp-content/uploads/2015/03/Werewolf_HD.jpg)  
+
+Hintergrundbild im Spiel-Screen:
+https://images.alphacoders.com/434/434772.jpg  
+![](https://images.alphacoders.com/434/434772.jpg)  
