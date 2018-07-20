@@ -74,7 +74,7 @@ Ein Netzwerk besteht aus einem Server und maximal dreißig Clients, wobei diese 
 
 **Die GUI:**  
 Die GUI wurde mithilfe von JavaFX und Scene Builder erstellt. FXML, eine XML-basierte Sprache, dient als die Präsentation (View) in unserem MVC-Modell. Die FXML-Elemente werden durch einen Controller gesteuert. CSS wurde auch verwendet, um dem Startbildschirm ein Hintergrundbild zu geben.  
-Der Spieler kann einen anderen Spieler durch die Tabelle auswählen und verschiedene Aktionen durch die Buttons durchführen. Es gibt auch einen Chat-Box, indem man mit anderen Spieler kommunizieren kann.
+Der Spieler kann einen anderen Spieler durch die Tabelle auswählen und verschiedene Aktionen durch die Buttons durchführen. Es gibt auch eine Chat-Box, indem Spieler mit anderen Spielern kommunizieren können.
 
 
 - ***Probleme des Projekts***
@@ -85,10 +85,10 @@ Die Aktionen, bei denen ein Spieler ausgewählt werden muss, können dann durch 
 Ein Problem ist, dass man in der Tabelle der Spieler einmal scrollen muss, um den Status der Spieler zu aktualisieren. Dies konnten wir bis jetzt noch nicht lösen.  
 Was immer eine Problematik war, dass man die GUI nie als perfekt für den aktuellen Status des Programmes angesehen hat und man daher immer etwas Zeit für die Anpassung der GUI investieren musste.  
 Bevor ein Spiel beigetreten werden kann, benötigt man die Daten des Hosts. Diese kann man nur extern beim Host selbst in Form einer anderen Kommunikationsmöglichkeit erfragen. Für den Client selbst wird nicht angezeigt, welche Spiele er beitreten kann.  
-Ein weiteres Problem war, die Verknüpfung von Server ( und Clients )  mit der GUI zu erstellen. Die GUI hang während der Server gelaufen ist. Dieses Problem konnte behoben werden, indem man neue Threads für Server und Clients erstellte und diese Threads parallel mit JavaFX-Thread laufen lässt.  
+Ein weiteres Problem war, die Verknüpfung von Server ( und Clients )  mit der GUI zu erstellen. Die GUI hing während der Server gelaufen ist. Dieses Problem konnte behoben werden, indem man neue Threads für Server und Clients erstellte und diese Threads parallel mit JavaFX-Thread laufen lässt.  
 Ein weiteres Problem beim Testen war, dass man den Prozess mit dem verbundenen Port manuell schließen muss, damit man wieder diesen Port benutzen kann. Dieses Problem wurde behoben durch passende Behandlung, wenn man die App schließt.  
-Ein großes Problem war wiederum, dass man die Exception erkennt und dementsprechend eine Behandlung dafür vorbereiten musste. Nicht alle Exception wurde behandelt. Da es ist nicht so leicht war, alle Exception zu identifizieren.  
-Das letzte Problem war, die Spielers zu verwalten. Der Server erkennt jeden Client durch seinen Namen, jedoch kann er nicht unterscheiden, wenn mehrere Clients den gleichen Namen besitzen.
+Ein großes Problem war widerum, dass man die Exception erkennen und dementsprechend eine Behandlung dafür vorbereiten musste. Nicht alle Exceptions wurden behandelt, da es nicht so leicht war, alle Exceptions zu identifizieren.  
+Das letzte Problem war, die Spieler zu verwalten. Der Server erkennt jeden Client durch seinen Namen, jedoch kann er nicht feststellen, ob mehrere Clients den gleichen Namen besitzen.
 
 
 ## Bedienungsanleitung ##
